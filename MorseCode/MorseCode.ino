@@ -24,140 +24,101 @@ void dash(){
   delay(300);
 }
 
+void doMorse(char *x){
+  int i=0;
+  while(x[i]!='\0'){
+    if(x[i]== '.'){
+      dot();
+    }
+    else if(x[i]== '-'){
+      dash();
+    }
+    else{
+      Serial.println("ERROR, skipping.");
+    }
+    i++;
+  }
+}
+
 void select(char x){
   switch (x) {
   case 'a':
-    dot();
-    dash();
+    doMorse(".-");
     break;
   case 'b':
-    dash();
-    dot();
-    dot();
+    doMorse("-...");
     break;
   case 'c':
-    dash();
-    dot();
-    dash();
-    dot();
+    doMorse("-.-.");
     break;
   case 'd':
-    dash();
-    dot();
+    doMorse("-..");
     break;
   case 'e':
-    dot();
+    doMorse(".");
     break;
   case 'f':
-    dot();
-    dot();
-    dash();
-    dot();
+    doMorse("..-.");
     break;
   case 'g':
-    dash();
-    dash();
-    dot();
+    doMorse("--.");
     break;
   case 'h':
-    dot();
-    dot();
-    dot();
-    dot();
+    doMorse("....");
     break;
   case 'i':
-    dot();
-    dot();
+    doMorse("..");
     break;
   case 'j':
-    dot();
-    dash();
-    dash();
-    dash();
+    doMorse(".---");
     break;
   case 'k':
-    dash();
-    dot();
-    dash();
-    dot();
+    doMorse("-.-");
     break;
   case 'l':
-    dot();
-    dash();
-    dot();
-    dot();
+    doMorse(".-..");
     break;
   case 'm':
-    dash();
-    dash();
+    doMorse("--");
     break;
   case 'n':
-    dash();
-    dot();
+    doMorse("-.");
     break;
   case 'o':
-    dash();
-    dash();
-    dash();
+    doMorse("---");
     break;
   case 'p':
-    dot();
-    dash();
-    dash();
-    dot();
+    doMorse(".--.");
     break;
   case 'q':
-    dash();
-    dash();
-    dot();
-    dash();
+    doMorse("--.-");
     break;
   case 'r':
-    dot();
-    dash();
-    dot();
+    doMorse(".-.");
     break;
   case 's':
-    dot();
-    dot();
-    dot();
+    doMorse("...");
     break;
   case 't':
-    dash();
+    doMorse("-");
     break;
   case 'u':
-    dot();
-    dot();
-    dash();
+    doMorse("..-");
     break;
   case 'v':
-    dot();
-    dot();
-    dot();
-    dash();
+    doMorse("...-");
     break;
   case 'w':
-    dot();
-    dash();
-    dash();
+    doMorse(".--");
     break;
   case 'x':
-    dash();
-    dot();
-    dot();
-    dash();
+    doMorse("-..-");
     break;
   case 'y':
-    dash();
-    dot();
-    dash();
-    dash();
+    doMorse("-.--");
     break;
   case 'z':
-    dash();
-    dash();
-    dot();
-    dot();
+    doMorse("--..");
     break;
   default:
     digitalWrite (ledPin, LOW);
